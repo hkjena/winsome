@@ -1,0 +1,33 @@
+.header {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding: 0 80px;
+    position: sticky;
+    background-color: white;
+    z-index: 99999;
+    box-shadow: 0 8px 2px -6px rgba(0,0,0,0.5);
+    top:0;
+  
+    .logo-container {
+
+      .logo{
+        width: 100px;
+        height: 64px;
+      }
+    }
+  
+    .options {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+      .option {
+        padding: 10px 15px;
+      }
+    }
+  }
+  

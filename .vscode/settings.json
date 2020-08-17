@@ -1,0 +1,6 @@
+{
+  "editor.formatOnSave": true,
+  "[css]": {
+    "editor.suggest.insertMode": "replace"
+  }
+}
