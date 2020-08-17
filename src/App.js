@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import Homepage from './pages/homepage/homepage';
-import ShopPage from './pages/shop/ShopPage';
+import Homepage from './pages/homepage';
+import ShopPage from './pages/shop';
 
 import './App.css';
 
