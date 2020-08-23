@@ -1,15 +1,17 @@
-.sign-in-container{
-    display: flex;
-    justify-content: center;
-    align-self: center;
+.sign-in-container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
 }
-.sign-in{
-    display: flex;
-    flex-direction: column;
-    padding:20px;
-    width:30vw;
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  min-width: 268px;
+  width: 30vw;
 
-    .title{
-        margin:10px 0;
-    }
+  .title {
+    margin: 10px 0;
+  }
 }
