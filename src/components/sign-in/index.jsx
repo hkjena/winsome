@@ -45,7 +45,9 @@ const SignIn = () => {
           <div className='buttons'>
             <Button type='submit'>Sign In</Button>
             <div className='google-btns' onClick={SignInWithGoogle}>
-              <Button isGoogleSignIn>Sign In with Google</Button>
+              <Button isGoogleSignIn type='button'>
+                Sign In with Google
+              </Button>
               <GoogleSvg height={'30px'} width={'30px'} />
             </div>
           </div>
