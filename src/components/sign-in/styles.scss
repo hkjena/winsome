@@ -1,17 +1,38 @@
 .sign-in-container {
   display: flex;
   justify-content: center;
-  align-self: center;
+  align-items: center;
+  min-height: calc(100vh - 95px);
 }
 .sign-in {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
-  min-width: 268px;
+  // padding: 20px;
+  height: 100%;
   width: 30vw;
+  min-width: 290px;
 
   .title {
     margin: 10px 0;
+  }
+}
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
+.google-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 0 3px #4285f4;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 1px 0 3px #357ae8;
   }
 }

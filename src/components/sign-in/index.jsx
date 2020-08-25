@@ -4,6 +4,7 @@ import Input from '../form-input';
 import Button from '../custom-button';
 
 import { SignInWithGoogle } from '../../firebase/firebase.utils';
+import { GoogleSvg } from '../assets/allsvgs';
 
 import './styles.scss';
 
@@ -41,8 +42,13 @@ const SignIn = () => {
             required
           />
 
-          <Button type='submit'>Sign In</Button>
-          <Button onClick={SignInWithGoogle}>Sign In with Google</Button>
+          <div className='buttons'>
+            <Button type='submit'>Sign In</Button>
+            <div className='google-btns' onClick={SignInWithGoogle}>
+              <Button isGoogleSignIn>Sign In with Google</Button>
+              <GoogleSvg height={'30px'} width={'30px'} />
+            </div>
+          </div>
         </form>
       </div>
     </div>
