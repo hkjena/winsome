@@ -15,6 +15,7 @@
   border: none;
   cursor: pointer;
   flex: 1;
+  border: 1px solid black;
 
   &:hover {
     background-color: white;
@@ -25,10 +26,11 @@
     background-color: #4285f4;
     color: white;
     padding: 0 10px;
+    border: 1px solid #4285f4;
 
     &:hover {
       background-color: #357ae8;
-      border: none;
+      border: 1px solid #357ae8;
     }
   }
 }
