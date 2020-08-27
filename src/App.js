@@ -12,6 +12,7 @@ import './App.css';
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const history = useHistory();
+
   useEffect(() => {
     let unsubscribeFromAuth = null;
     unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {

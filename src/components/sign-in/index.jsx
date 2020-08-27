@@ -4,19 +4,30 @@ import { Link } from 'react-router-dom';
 import Input from '../form-input';
 import Button from '../custom-button';
 
-import { SignInWithGoogle } from '../../firebase/firebase.utils';
+import { auth, SignInWithGoogle } from '../../firebase/firebase.utils';
 import { GoogleSvg } from '../assets/allsvgs';
 
 import './styles.scss';
 
 const SignIn = () => {
-  const [input, setInput] = useState({ email: '', password: '' });
-  const handelSubmit = e => {
+  const initialState = { email: '', password: '' };
+
+  const [userdata, setUserdata] = useState(initialState);
+
+  const handelSubmit = async e => {
     e.preventDefault();
+    const { email, password } = userdata;
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      setUserdata(initialState);
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   const handelChange = e => {
     const { name, value } = e.target;
-    setInput({ ...input, [name]: value });
+    setUserdata({ ...userdata, [name]: value });
   };
 
   return (
@@ -29,7 +40,7 @@ const SignIn = () => {
             type='email'
             name='email'
             label='email'
-            value={input.email}
+            value={userdata.email}
             handelChange={handelChange}
             required
           />
@@ -38,7 +49,7 @@ const SignIn = () => {
             type='password'
             name='password'
             label='password'
-            value={input.password}
+            value={userdata.password}
             handelChange={handelChange}
             required
           />
