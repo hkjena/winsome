@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Input from '../form-input';
 import Button from '../custom-button';
@@ -51,6 +52,12 @@ const SignIn = () => {
               <GoogleSvg height={'30px'} width={'30px'} />
             </div>
           </div>
+          <p style={{ textAlign: 'center', fontWeight: 'bold' }}>
+            New to Winsome?{' '}
+            <Link to='/signup' className='link'>
+              Create an account.
+            </Link>
+          </p>
         </form>
       </div>
     </div>
