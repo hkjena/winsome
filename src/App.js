@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Homepage from './pages/homepage';
@@ -11,7 +11,7 @@ import { setCurrentUser } from './redux/user/user.actions';
 
 import './App.css';
 
-function App({ setCurrentUser }) {
+function App({ currentUser, setCurrentUser }) {
   // const history = useHistory();
 
   useEffect(() => {
@@ -36,14 +36,21 @@ function App({ setCurrentUser }) {
       <Switch>
         <Route exact path='/' component={Homepage} />
         <Route path='/shop' exact component={ShopPage} />
-        <Route path='/login' exact component={SignInAndSignUpPage} />
-        <Route path='/signup' exact component={SignInAndSignUpPage} />
+        <Route
+          path={['/login', '/signup']}
+          exact
+          render={() =>
+            currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage />
+          }
+        />
       </Switch>
     </div>
   );
 }
+const mapStatetoProps = ({ user }) => ({ currentUser: user });
+
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user)),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStatetoProps, mapDispatchToProps)(App);
