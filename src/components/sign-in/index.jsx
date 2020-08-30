@@ -5,7 +5,7 @@ import Input from '../form-input';
 import Button from '../custom-button';
 
 import { auth, SignInWithGoogle } from '../../firebase/firebase.utils';
-import { GoogleSvg } from '../assets/allsvgs';
+import { GoogleSvg } from '../../assets/allsvgs';
 
 import './styles.scss';
 
